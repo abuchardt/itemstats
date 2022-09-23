@@ -5,7 +5,7 @@
 #'
 #' @export
 #'
-app <- function(name = "dicoApp", ...) {
+app <- function(name = "RMDitemfit", ...) {
   appDir <- system.file(paste0("apps/", name), package = "itemstats")
   if (appDir == "") stop("The shiny app ", name, " does not exist")
   shiny::runApp(appDir, ...)

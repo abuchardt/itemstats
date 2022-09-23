@@ -4,7 +4,7 @@
 \alias{app}
 \title{Launch Shiny App}
 \usage{
-app(name = "dicoApp", ...)
+app(name = "RMDitemfit", ...)
 }
 \arguments{
 \item{name}{The name of the app to run}
