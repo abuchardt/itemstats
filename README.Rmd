@@ -1,0 +1,45 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# itemstats
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of itemstats is to ...
+
+## Installation
+
+You can install the development version of itemstats from [GitHub](https://github.com/) with:
+
+```{r, eval=FALSE}
+# install.packages("devtools")
+devtools::install_github("abuchardt/itemstats")
+```
+
+## Example
+
+You should now be able to run your app for dichotomous items with
+
+```{r, eval=FALSE}
+itemstats::app("RMDitemfit")
+```
+
+and for polytomous items with
+
+```{r, eval=FALSE}
+itemstats::app("RMPitemfit")
+```
+
