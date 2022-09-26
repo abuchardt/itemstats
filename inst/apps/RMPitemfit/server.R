@@ -155,7 +155,6 @@ function(input, output, session) {
       beta <- betaRea()
       theta <- thetaRea()
       
-      
       method.item <- input$method
       if (input$methodpp == "ml.pp") {
         method.person <- "MLE"
@@ -166,6 +165,7 @@ function(input, output, session) {
       #  jlm.adj <- input$adj
       #}
       
+      B <- input$B
       N <- length(theta)
       K <- ncol(beta)
       M <- nrow(beta)
@@ -179,7 +179,6 @@ function(input, output, session) {
       }
       
       #-------------------- Simulate -----------------------------------------
-      B <- input$B
       P0 <- matrix(runif(n = N * K * B, 0, 1), ncol = B)
       P1 <- split(P0, rep(1:ncol(P0), each = nrow(P0)))
       PP <- lapply(P1, FUN = function(x) matrix(x, nrow = N, ncol = K))
@@ -258,6 +257,9 @@ function(input, output, session) {
             }
           }
           if (method.item == "pcml.ip") {
+            #fit <- sirt::rasch.pairwise(newX, zerosum=TRUE)
+            #beta.vec <- fit$item$b   # extract item difficulties
+            
             fit <- sirt::rasch.evm.pcm(dat = newX)
             beta.vec <- fit$item$est 
             if (any(is.na(beta.vec))) {
@@ -298,7 +300,7 @@ function(input, output, session) {
           #============= End compute infit/outfit ============================
           
           # Increment the progress bar, and update the detail text.
-          incProgress(1/B, detail = paste("Iteration", b))
+          #incProgress(1/B, detail = paste("Iteration", b))
           
         }
       }

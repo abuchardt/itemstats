@@ -139,7 +139,7 @@ zeromean_confirm <- function() {
   )
 )
 }
-#' Create a modal dialog UI when mean of item parameters is not zero
+#' Create a modal dialog UI when files of item parameters and person parameters are the same
 #'
 #' @param ... Elements to include
 #'
